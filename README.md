@@ -1,7 +1,7 @@
 # Introduction
 The aim of this team project was to apply *stochastic modeling techniques* to model a '**Dynamic Server Allocation for Energy Efficiency**'. 
 
-Power consumption in data centers receive a huge concern by data centre providers and that’s why in [this project](Project%20Documentation.pdf) we have modeled a policy, in **PEPA language**, that it will dynamically perform the powering on or off of the servers in order to minimize the power consumption according to the demand.
+Power consumption in data centers receive a huge concern by data center providers and that’s why in [this project](Project%20Documentation.pdf) we have modeled a policy, in **PEPA language**, that it will dynamically perform the powering on or off of the servers in order to minimize the power consumption according to the demand.
 
 The development of the previously presented task was based taking as a starting point the publication "[*Dynamic Server Allocation for Energy Efficiency*](A%20Dynamic%20Server%20Allocation%20for%20Energy%20Efficiency.pdf)" done by Nigel Thomas and Ali Alssaiari (2016).
 

@@ -1,0 +1,72 @@
+% Specify how elements are typeset inside the frame
+\ProvidesPackage{beamerinnerthemeoxonian}
+
+% --- Title Page ---
+\makeatletter
+\setbeamertemplate{title page}
+{
+    \vbox{}
+    \vfill
+    \begin{centering}
+        \vskip0.25em
+        \begin{beamercolorbox}[sep=8pt,center]{title}
+            \usebeamerfont{title}\inserttitle\par
+            \ifx\insertsubtitle\@empty
+            \else
+            \vskip0.25em
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+            \fi   
+        \end{beamercolorbox}
+        \vskip2.25em
+        {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+        \vskip1em\par
+        \begin{beamercolorbox}[sep=8pt,center]{author}
+            \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \vspace{-10pt}
+        \begin{beamercolorbox}[sep=8pt,center]{institute}
+            \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,center]{date}
+            \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}\vskip0.5em
+    \end{centering}
+    \vfill
+}
+\makeatother
+
+% --- Footer ---
+%Remove Navigation Bars
+\setbeamertemplate{footline}[frame number]{}
+% And Symbols
+\setbeamertemplate{navigation symbols}{}
+% Design
+\setbeamertemplate{footline}{
+\begin{tikzpicture}[remember picture,overlay]
+    \coordinate (West) at (0,0.6);
+    \coordinate (East) at (\textwidth - 1.5cm,0.6);
+
+    \draw[univered, very thick] (West) -- (East);
+    
+    \node [inner sep=0pt,clip,rounded corners=0.1cm] (univelogo) at (0.95\textwidth,0.6) {\includegraphics[width=.075\textwidth]{Theme/Logos/unive.png}};
+
+\end{tikzpicture}}
+
+% --- Header ---
+\setbeamertemplate{frametitle}{
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=4.375ex]{frametitle}
+        \hspace*{1ex}\insertframetitle \hfill {\small\insertframenumber} \hspace*{1ex}
+    \end{beamercolorbox}
+    \par
+    \begin{tikzpicture}[remember picture,overlay]
+        \coordinate (LeftEnd) at (-1, 0.5);
+        \coordinate (LeftEndUnder) at (-1, 0.1);
+        \coordinate (RightEnd) at (3,0.5);
+        \draw[univered, thick, fill=univered] (LeftEnd)--(RightEnd)--(LeftEndUnder) -- (LeftEnd);
+
+        \coordinate (RightEnd) at (\paperwidth, 0.1);
+        \coordinate (PreRightEnd) at (8, 0.5);
+        \draw[univered,thick] (RightEnd) -- (PreRightEnd);
+        
+    \end{tikzpicture}
+}
